@@ -1,2 +1,7 @@
-_!_
-
+<div *ngFor = "let hero of heroes" style="text-align: center" class="jumbotron row">
+<div class="col-md-4">
+  <p>{{hero.Id}}</p>
+  <p>{{hero.Name}}</p>
+</div>
+</div>
+<router-outlet></router-outlet>
