@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HeroService } from './services/hero/hero.service';
-import { Hero } from './model/hero';
+import { Post } from './model/post';
+import { PostService } from './services/post/post.service';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +10,14 @@ import { Hero } from './model/hero';
 })
 export class AppComponent {
   title = 'app';
-  heroes: Hero[];
+  posts: Post[];
 
   /**
    *
    */
-  constructor(private heroService: HeroService) {
-    this.heroes = this.heroService.takeAllHeroes();
+  constructor(private postService : PostService) {
+    this.postService.getPosts().subscribe((posts) => {
+      this.posts = posts;
+    })
   }
 }
