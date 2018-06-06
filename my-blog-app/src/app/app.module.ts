@@ -3,13 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { NotFoundComponentComponent } from './components/not-found-component/not-found-component.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NotFoundComponentComponent,
     NotFoundComponent
   ],
   imports: [
