@@ -1,0 +1,13 @@
+#footer-holder{
+    font-size: 1.4em;
+    text-align: center;    
+    padding: 300px;
+    font-family: 'Merienda One', sans-serif;
+    font-weight: bold;
+    background: url("/assets/images/food-paradise.jpg") no-repeat 0 0;
+    background-size: auto auto;
+    background-size: cover;
+}
+#footer-holder h3 {   
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.863), 0 6px 20px 0 rgba(0, 0, 0, 0.87);
+}
