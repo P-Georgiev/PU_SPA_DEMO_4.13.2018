@@ -9,6 +9,11 @@ export class AuthService {
 
   register(email: string, password: string){
     firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then(
+      response => {
+        this.router.navigate(['/login']);
+      }
+    )
     .catch(
       error => console.log(error)
     );
@@ -25,6 +30,14 @@ export class AuthService {
     ).catch(
       error => alert("Wrong credentials!")
     );
+  }
+
+  isLogged(){
+    if(sessionStorage.getItem("currentUser") != null){
+      return true;
+    }else{
+      return false;
+    }
   }
 
 }

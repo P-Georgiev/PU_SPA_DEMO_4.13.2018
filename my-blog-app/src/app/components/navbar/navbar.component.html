@@ -21,24 +21,10 @@
           <a routerLink="/blog" class="single-menu-element-link">Blog</a>
       </li>
     </ul>
-    <ul *ngIf="isLogged" class="nav navbar-nav navbar-right ml-auto">
-      <li class="nav-item"><a href="#" class="nav-link notifications"><i class="fa fa-bell-o"></i><span class="badge">1</span></a></li>
-      <li class="nav-item"><a href="#" class="nav-link messages"><i class="fa fa-envelope-o"></i><span class="badge">10</span></a></li>
-      <li class="nav-item dropdown">
-        <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action">
-          <img src="./assets/images/skull.png" class="avatar" alt="Avatar"> 
-          Chief Skull Master <b class="caret"></b>
-        </a>
-        <ul class="dropdown-menu">
-          <li><a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a></li>
-          <li><a href="#" class="dropdown-item"><i class="fa fa-calendar-o"></i> Calendar</a></li>
-          <li><a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a></li>
-          <li class="divider dropdown-divider"></li>
-          <li><a href="#" class="dropdown-item"><i class="material-icons">&#xE8AC;</i> Logout</a></li>
-        </ul>
-      </li>
+    <ul *ngIf="isLogged()" class="nav navbar-nav navbar-right ml-auto">
+      <li><a routerLink="/home" class="dropdown-item" (click)="onLogout()"><i class="material-icons">&#xE8AC;</i> Logout</a></li>
     </ul>
-    <ul *ngIf="!isLogged" class="nav navbar-nav navbar-right ml-auto">
+    <ul *ngIf="!isLogged()" class="nav navbar-nav navbar-right ml-auto">
       <li><a routerLink="/login" class="single-menu-element-link">Login</a></li>
       <li><a routerLink="/register" class="single-menu-element-link">Register</a></li>
     </ul>
