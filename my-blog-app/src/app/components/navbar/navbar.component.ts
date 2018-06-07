@@ -22,7 +22,7 @@ export class NavbarComponent implements OnInit {
   }
 
   onLogout(){
-    sessionStorage.clear();
+    this.authService.logout();
   }
 
 }

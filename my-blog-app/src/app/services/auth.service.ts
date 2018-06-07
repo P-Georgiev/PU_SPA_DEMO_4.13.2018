@@ -1,21 +1,26 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import * as firebase from 'firebase';
+import {ToastrService} from 'ngx-toastr';
 
 @Injectable()
 export class AuthService {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private toastr: ToastrService) { }
 
   register(email: string, password: string){
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(
       response => {
+        this.toastr.success("Register successful!");
         this.router.navigate(['/login']);
       }
     )
     .catch(
-      error => console.log(error)
+      error => {
+        this.toastr.error(error.message, "Error");
+        console.log(error);
+      }
     );
   }
 
@@ -25,10 +30,11 @@ export class AuthService {
       response => {
         console.log(response);
         sessionStorage.setItem("currentUser", response.user["email"]);
+        this.toastr.success("Login successful!", "Success");
         this.router.navigate(["/home"]);
       }
     ).catch(
-      error => alert("Wrong credentials!")
+      error => this.toastr.error("Wrong credentials!", "Error")
     );
   }
 
@@ -38,6 +44,11 @@ export class AuthService {
     }else{
       return false;
     }
+  }
+
+  logout(){
+    sessionStorage.clear();
+    this.toastr.success("Logout successful!", "Success");
   }
 
 }
