@@ -2,13 +2,13 @@
   <h1>REGISTER</h1>
   <div class="form-group">
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" [(ngModel)]='email' class="form-control" required>
+      <input ngModel name="email" type="email" id="email" name="email" class="form-control" required>
   </div>
   <div class="form-group">
       <label for="password">Password</label>
-      <input type="password" id="password" name="password" [(ngModel)]='password' class="form-control" minlength="6" required>
+      <input ngModel name="password" type="password" id="password" name="password" class="form-control" minlength="6" required>
   </div>
   <div class="form-group">
-      <button type="submit" class="btn-signup" (click)='onRegister()' [disabled]='registerForm.invalid'>Register</button>
+      <button type="submit" class="btn-signup" (click)='onRegister(registerForm)' [disabled]='registerForm.invalid'>Register</button>
   </div>
 </form>
