@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
 	{
@@ -13,7 +14,11 @@ const routes: Routes = [
 	{
 		path: 'home',
 		component: LandingPageComponent
-    },
+	},
+	{
+		path: 'register',
+		component: RegisterComponent
+	},
     {   path: '**', 
         component: NotFoundComponent }
 ];
