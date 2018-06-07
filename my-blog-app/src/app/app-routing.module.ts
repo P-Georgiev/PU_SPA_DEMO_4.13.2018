@@ -5,6 +5,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
 	{
@@ -15,6 +17,11 @@ const routes: Routes = [
 	{
 		path: 'home',
 		component: LandingPageComponent
+	},
+	{
+		path: 'blog',
+		component: BlogComponent,
+		canActivate: [AuthGuard]
 	},
 	{
 		path: 'register',

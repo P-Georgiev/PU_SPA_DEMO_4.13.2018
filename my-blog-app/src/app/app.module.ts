@@ -14,6 +14,7 @@ import { AuthService } from './services/auth.service';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuard } from './auth.guard';
+import { BlogComponent } from './components/blog/blog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { AuthGuard } from './auth.guard';
     LandingPageComponent,
     NavbarComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,
