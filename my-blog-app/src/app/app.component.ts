@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
       projectId: "my-blog-app-27b09",
       storageBucket: "my-blog-app-27b09.appspot.com",
       messagingSenderId: "57867251549"
+
     })
   }
 }

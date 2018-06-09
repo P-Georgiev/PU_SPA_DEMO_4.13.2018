@@ -16,6 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuard } from './auth.guard';
 import { BlogComponent } from './components/blog/blog.component';
 import { AboutComponent } from './components/about/about.component';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { BlogService } from './services/blog.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,10 +35,11 @@ import { AboutComponent } from './components/about/about.component';
     AppRoutingModule,
     FormsModule,
     ToastrModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFirestoreModule
 
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, BlogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
