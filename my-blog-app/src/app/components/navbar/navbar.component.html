@@ -17,8 +17,12 @@
       <li class="nav-item">
           <a routerLink="/about" class="single-menu-element-link">About</a>
       </li>
-      <li class="nav-item">
-          <a routerLink="/blog" class="single-menu-element-link">Blog</a>
+      <li class="nav-item dropdown">
+          <a data-toggle="dropdown" class="nav-link dropdown-toggle">Blog <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a routerLink='/blog'>Show blog posts</a></li>
+            <li *ngIf='isLogged()'><a routerLink='/article'>Create blog post</a></li>
+          </ul>
       </li>
     </ul>
     <ul *ngIf="isLogged()" class="nav navbar-nav navbar-right ml-auto">
@@ -30,3 +34,4 @@
     </ul>
   </div>
 </nav>  
+
