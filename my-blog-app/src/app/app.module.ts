@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import * as firebase from "firebase";
+import { AngularFireModule } from 'angularfire2';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
@@ -18,6 +19,8 @@ import { BlogComponent } from './components/blog/blog.component';
 import { AboutComponent } from './components/about/about.component';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { BlogService } from './services/blog.service';
+
+import { environment } from '../environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,12 +35,12 @@ import { BlogService } from './services/blog.service';
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
     AppRoutingModule,
     FormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    AngularFirestoreModule
-
   ],
   providers: [AuthService, AuthGuard, BlogService],
   bootstrap: [AppComponent]
