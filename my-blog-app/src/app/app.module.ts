@@ -33,7 +33,7 @@ import { CreatePostComponent } from './components/blog/create-post/create-post.c
     LoginComponent,
     BlogComponent,
     AboutComponent,
-    CreatePostComponent
+    CreatePostComponent,
   ],
   imports: [
     BrowserModule,

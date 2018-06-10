@@ -43,7 +43,31 @@ export class BlogService {
 
   deletePost(post: Post){
     this.postDoc = this.afs.doc(`posts/${post.Id}`);
-    this.postDoc.delete();
-    
+    this.postDoc.delete().then(
+      response => {
+        this.toastr.success("Blog post deleted!", "Success");
+        this.router.navigate(['/blog']);
+      }
+    )
+    .catch(
+      error => {
+        this.toastr.error(error.message, "Error");
+      }
+    );;
+  }
+
+  editPost(post: Post){
+    this.postDoc = this.afs.doc(`posts/${post.Id}`);
+    this.postDoc.update(post).then(
+      response => {
+        this.toastr.success("Blog post updated!", "Success");
+        this.router.navigate(['/blog']);
+      }
+    )
+    .catch(
+      error => {
+        this.toastr.error(error.message, "Error");
+      }
+    );;
   }
 }
