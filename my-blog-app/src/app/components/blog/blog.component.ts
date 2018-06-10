@@ -30,4 +30,8 @@ export class BlogComponent implements OnInit, OnDestroy {
     });
   }
 
+  deletePost(post: Post){
+    this.blogService.deletePost(post);
+  }
+
 }

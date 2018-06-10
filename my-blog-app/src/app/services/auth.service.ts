@@ -19,7 +19,6 @@ export class AuthService {
     .catch(
       error => {
         this.toastr.error(error.message, "Error");
-        console.log(error);
       }
     );
   }
@@ -28,7 +27,6 @@ export class AuthService {
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then(
       response => {
-        console.log(response);
         sessionStorage.setItem("currentUser", response.user["email"]);
         this.toastr.success("Login successful!", "Success");
         this.router.navigate(["/home"]);

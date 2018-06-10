@@ -1,16 +1,55 @@
-.row{
-    text-align: center; 
-    font-family: 'Raleway', sans-serif;
-}
-div.polaroid {
-    border: 1px double; 
-    margin: 15px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-img{
-    width: 80%
-}
-button.btn{
+
+.thumbnail {
+    margin: 0 0 20px 6.6%;
+    height: 470px;
+    overflow: hidden;
     float: left;
-    margin-left: 8px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+}
+
+.thumbnail img {
+    height: 200px;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+.thumbnail h4 {
+    margin: 10px 0;
+    height: 60px;
+}
+.thumbnail #descr {
+    height: 100px;
+    width: 100%;
+    margin: 0 auto;
+
+}
+.thumbnail #publishDate {
+    float: left;
+    font-size: 10px;
+    font-style: italic;
+}
+
+.thumbnail #readmore {
+    float: left;
+}
+
+.thumbnail #edit, #delete {
+    float: right;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 992px) {
+    .thumbnail {
+        margin-left: 5.5%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .thumbnail {
+        margin-left: 0;
+        clear: both;
+    }
 }

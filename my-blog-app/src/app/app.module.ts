@@ -21,6 +21,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { BlogService } from './services/blog.service';
 
 import { environment } from '../environments/environment';
+import { CreatePostComponent } from './components/blog/create-post/create-post.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import { environment } from '../environments/environment';
     RegisterComponent,
     LoginComponent,
     BlogComponent,
-    AboutComponent
+    AboutComponent,
+    CreatePostComponent
   ],
   imports: [
     BrowserModule,

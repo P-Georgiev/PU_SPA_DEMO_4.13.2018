@@ -1,15 +1,25 @@
-<div class="row"> 
-  <div *ngFor="let post of posts" >
-    <div class="col-md-4">
-      <div class="polaroid">           
-          <h3>{{post.title}}</h3>
-          <img src="{{post.ImageSrc}}" alt="" /> 
-          <br>      
-          <br>
-          <button class="btn btn-primary" (click)='goToContent(post.Id)'>Content</button>
-          <br>
-          <br>
-      </div>
-    </div>        
-  </div>
+
+<div class="content">
+    <div class="row">
+        <div class="text-center col-center" >
+            <h2>Blog posts</h2>
+            <hr>
+            <div class="col-md-5 col-lg-3 col-sm-10 col-xs-12 thumbnail" *ngFor='let post of posts'>
+                <div class="text-center">
+                    <h4 class="article-title" id="title">{{ post.Title }}</h4>
+                    <p id="descr">{{post.Description}}</p>
+                    <img src="{{ post.ImageSrc }}" class="img-responsive" alt=""/>
+                    <div id="publishDate">Published on: {{post.PublishDate}}</div>
+                    <br/>           
+                    <br/>      
+                    <a href="{{post.ArticleUrl}}" class="btn btn-primary" id="readmore">Read more...</a>
+                    <a class="btn" id="delete" (click)="deletePost(post)">
+                        <i class="fa fa-trash-o"></i>
+                    </a>
+                    <a class="btn" id="edit">
+                      <i  class="fa fa-pencil-square-o"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
 </div>

@@ -1,17 +1,19 @@
 export class Post {
     Id: string;
     Title: string;
-    Content: string;
+    Description: string;
     ImageSrc: string;
-    PublishDate: Date;
+    ArticleUrl: string;
+    PublishDate: string;
     UserId: string;
 
     constructor(id?: string, title?: string,
-        content?: string, imageSrc?: string, publishDate?: Date, userId?: string) {
+        description?: string, imageSrc?: string, articleUrl?: string, publishDate?: string, userId?: string) {
         this.Id = id;
         this.Title = title;
-        this.Content = content;
+        this.Description = description;
         this.ImageSrc = imageSrc;
+        this.ArticleUrl = articleUrl;
         this.PublishDate = publishDate;
         this.UserId = userId;
         }

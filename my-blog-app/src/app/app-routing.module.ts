@@ -8,6 +8,7 @@ import { LoginComponent } from './components/login/login.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { AuthGuard } from './auth.guard';
 import { AboutComponent } from './components/about/about.component';
+import { CreatePostComponent } from './components/blog/create-post/create-post.component';
 
 const routes: Routes = [
 	{
@@ -21,7 +22,11 @@ const routes: Routes = [
 	},
 	{
 		path: 'blog',
-		component: BlogComponent,
+		component: BlogComponent
+	},
+	{
+		path: 'createpost',
+		component: CreatePostComponent,
 		canActivate: [AuthGuard]
 	},
 	{
