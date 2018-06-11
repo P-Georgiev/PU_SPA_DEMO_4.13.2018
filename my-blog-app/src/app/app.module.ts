@@ -19,7 +19,7 @@ import { BlogComponent } from './components/blog/blog.component';
 import { AboutComponent } from './components/about/about.component';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { BlogService } from './services/blog.service';
-
+import { LoadingModule } from 'ngx-loading';
 import { environment } from '../environments/environment';
 import { CreatePostComponent } from './components/blog/create-post/create-post.component';
 import { PagerService } from './services/pager.service';
@@ -44,6 +44,7 @@ import { PagerService } from './services/pager.service';
     FormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
+    LoadingModule
   ],
   providers: [AuthService, AuthGuard, BlogService, PagerService],
   bootstrap: [AppComponent]

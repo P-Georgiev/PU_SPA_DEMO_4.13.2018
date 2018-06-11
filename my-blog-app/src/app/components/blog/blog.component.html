@@ -4,6 +4,9 @@
         <div class="text-center col-center" >
             <h2>Blog posts</h2>
             <hr>
+            <div class="my-container">
+                    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+            </div>
             <div class="col-md-5 col-lg-3 col-sm-10 col-xs-12 thumbnail" *ngFor='let post of pagedItems'>
                 <div class="text-center">
                     <h4 class="article-title" id="title">{{ post.Title }}</h4>
@@ -61,7 +64,7 @@
             <input [(ngModel)]="postToEdit.Title" type="text" class="form-control" id="title" name="title" placeholder="Title" required>
           </div>
           <div class="form-group">
-            <textarea [(ngModel)]="postToEdit.Description" class="form-control" type="textarea" id="description" name="description" placeholder="Description" rows="3" required></textarea>
+            <textarea [(ngModel)]="postToEdit.Description" class="form-control" type="textarea" id="description" name="description" placeholder="Description" rows="3" maxlength="209" required></textarea>
           </div>
           <div class="form-group">
             <input [(ngModel)]="postToEdit.ImageSrc" type="text" class="form-control" id="imageSrc" name="imageSrc" placeholder="Image url" required>

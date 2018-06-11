@@ -27,6 +27,7 @@ export class BlogComponent implements OnInit, OnDestroy {
     PublishDate: '',
     UserId: ''
   };
+  loading = false;
 
   pager: any = {};
   pagedItems: any[];
@@ -36,7 +37,6 @@ export class BlogComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-
     this.isEdit = false;
     this.currentUserId = sessionStorage.getItem("currentUser");
     this.getPosts();
@@ -56,9 +56,11 @@ export class BlogComponent implements OnInit, OnDestroy {
 }
 
   getPosts(){
+    this.loading = true;
     this.sub = this.blogService.getPosts().subscribe(x => {
       this.posts = x;
       this.setPage(1);
+      this.loading = false;
     });
   }
 

@@ -76,3 +76,6 @@ div.container{
     width: 50%;
     padding: 10px;
 }
+div.my-container{
+    position: relative;
+}
