@@ -1,14 +1,14 @@
 
 form {
     width: 30%; 
-    background-color: white;
+    background-color: rgb(245, 245, 245);
     height: 400px;
-    border-radius: 5px;
     margin-top: 170px;
     margin-left: 60%;
-    box-shadow: 1px 3px 10px #231f1f, -1px -3px 10px #231f1f;
     z-index: 2;
     position: relative;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
 }
 
 .form-group {
@@ -26,11 +26,9 @@ label {
 
 h1 {
     padding: 2% 11%;
-    color: #fa8072;
 }
 
 .btn-signup {
-    background-color: #fa8072;
     color: white;
     border: none;
     border-radius: 5px;

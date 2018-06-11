@@ -1,13 +1,13 @@
 #footer-holder{
+    background-color: #333;
     font-size: 1.4em;
     text-align: center;    
-    padding: 300px;
-    font-family: 'Raleway', sans-serif;
+    padding: 150px;
     font-weight: bold;
-    background: url("/assets/images/food-paradise.jpg") no-repeat 0 0;
-    background-size: auto auto;
-    background-size: cover;
+
 }
 #footer-holder h3 {   
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.863), 0 6px 20px 0 rgba(0, 0, 0, 0.87);
+    background-color: rgb(245, 245, 245);
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
 }

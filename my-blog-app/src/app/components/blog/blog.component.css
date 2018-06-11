@@ -1,4 +1,7 @@
-
+h2{
+    font-size: 35px;
+    color: rgb(245, 245, 245);
+}
 .thumbnail {
     margin: 0 0 20px 6.6%;
     height: 470px;
@@ -27,7 +30,7 @@
 }
 .thumbnail #publishDate {
     float: left;
-    font-size: 10px;
+    font-size: 12px;
     font-style: italic;
 }
 
@@ -58,10 +61,12 @@
 
 .form-area
 {
-    background-color: #FAFAFA;
+    background-color: rgb(245, 245, 245);
 	padding: 10px 40px 60px;
 	margin: 10px 0px 60px;
-	border: 1px solid GREY;
+    border: 1px solid GREY;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
 }
 textarea{
     resize: none;

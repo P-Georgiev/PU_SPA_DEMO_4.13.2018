@@ -52,6 +52,7 @@ export class BlogComponent implements OnInit, OnDestroy {
 
     // get current page of items
     this.pagedItems = this.posts.slice(this.pager.startIndex, this.pager.endIndex + 1);
+    
 }
 
   getPosts(){

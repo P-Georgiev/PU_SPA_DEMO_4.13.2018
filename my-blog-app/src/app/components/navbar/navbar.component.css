@@ -8,8 +8,7 @@ body{
     padding: 0 !important;
 }	
 .navbar {		
-    font-family: 'Raleway', sans-serif;
-    background: #fff;
+    background-color: rgb(245, 245, 245);
     padding-left: 16px;
     padding-right: 16px;
     border-bottom: 1px solid #d6d6d6;
