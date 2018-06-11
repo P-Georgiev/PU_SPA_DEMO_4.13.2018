@@ -6,6 +6,7 @@ import {ToastrService} from 'ngx-toastr';
 @Injectable()
 export class AuthService {
 
+
   constructor(private router: Router, private toastr: ToastrService) { }
 
   register(email: string, password: string){
@@ -27,7 +28,7 @@ export class AuthService {
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then(
       response => {
-        sessionStorage.setItem("currentUser", response.user["email"]);
+        sessionStorage.setItem("currentUser", response.user.uid);
         this.toastr.success("Login successful!", "Success");
         this.router.navigate(["/home"]);
       }
@@ -46,6 +47,7 @@ export class AuthService {
 
   logout(){
     sessionStorage.clear();
+    firebase.auth().signOut();
     this.toastr.success("Logout successful!", "Success");
   }
 

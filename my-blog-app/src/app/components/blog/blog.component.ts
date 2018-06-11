@@ -4,6 +4,7 @@ import { Post } from '../../models/post.model';
 import { Subscription } from 'rxjs';
 import { NgForm } from '@angular/forms';
 import * as firebase from 'firebase';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-blog',
@@ -26,14 +27,15 @@ export class BlogComponent implements OnInit, OnDestroy {
     UserId: ''
   };
 
-  constructor(private blogService: BlogService) {
+  constructor(private blogService: BlogService,private authService: AuthService) {
     this.sub = new Subscription();
   }
 
   ngOnInit() {
-    this.getPosts();
+
     this.isEdit = false;
-    this.currentUserId = firebase.auth().currentUser.uid;
+    this.currentUserId = sessionStorage.getItem("currentUser");
+    this.getPosts();
   }
 
   ngOnDestroy(): void {
