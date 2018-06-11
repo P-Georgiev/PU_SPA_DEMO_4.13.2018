@@ -1,4 +1,12 @@
 *{
+    color: rgb(245, 245, 245);
     text-align: center;
-    padding: 257px;
+}
+img {
+    width: 10%;
+    height: 10%;
+    border-radius: 10px;
+}
+p{
+    font-size: 20px;
 }
