@@ -4,7 +4,7 @@
         <div class="text-center col-center" >
             <h2>Blog posts</h2>
             <hr>
-            <div class="col-md-5 col-lg-3 col-sm-10 col-xs-12 thumbnail" *ngFor='let post of posts'>
+            <div class="col-md-5 col-lg-3 col-sm-10 col-xs-12 thumbnail" *ngFor='let post of pagedItems'>
                 <div class="text-center">
                     <h4 class="article-title" id="title">{{ post.Title }}</h4>
                     <p id="descr">{{post.Description}}</p>
@@ -23,6 +23,31 @@
                   </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!isEdit">
+    <div class="container">
+        <div class="text-center"> 
+            <!-- pager -->
+            <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                <li [ngClass]="{disabled:pager.currentPage === 1}">
+                    <a (click)="setPage(1)">First</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === 1}">
+                    <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+                </li>
+                <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                    <a (click)="setPage(page)">{{page}}</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                    <a (click)="setPage(pager.currentPage + 1)">Next</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                    <a (click)="setPage(pager.totalPages)">Last</a>
+                </li>
+            </ul>
         </div>
     </div>
 </div>

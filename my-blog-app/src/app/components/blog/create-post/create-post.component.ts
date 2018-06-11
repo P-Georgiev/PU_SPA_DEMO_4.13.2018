@@ -34,14 +34,21 @@ export class CreatePostComponent implements OnInit {
     this.post.ImageSrc = form.value.imageSrc;
     this.post.ArticleUrl = form.value.articleUrl;
     let today = new Date();
-    let date = today.getDate()+'.'+(today.getMonth()+1)+'.'+today.getFullYear();
-    let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    let date = this.addZero(today.getDate()) + '.' + this.addZero(today.getMonth()+1) + '.' + this.addZero(today.getFullYear());
+    let time = this.addZero(today.getHours()) + ":" + this.addZero(today.getMinutes()) + ":" + this.addZero(today.getSeconds());
     let dateTime = date+'  '+time;
     this.post.PublishDate = dateTime;
     this.post.UserId = firebase.auth().currentUser.uid;
     if(this.post.Title != '' && this.post.Description !='' && this.post.ImageSrc != '' && this.post.ArticleUrl !=''){
       this.blogService.addPost(this.post);
     }
+  }
+
+  addZero(i){
+    if (i < 10) {
+      i = "0" + i;
+    }
+  return i;
   }
 
 }

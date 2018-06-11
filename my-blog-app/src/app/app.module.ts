@@ -22,6 +22,7 @@ import { BlogService } from './services/blog.service';
 
 import { environment } from '../environments/environment';
 import { CreatePostComponent } from './components/blog/create-post/create-post.component';
+import { PagerService } from './services/pager.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,7 @@ import { CreatePostComponent } from './components/blog/create-post/create-post.c
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
   ],
-  providers: [AuthService, AuthGuard, BlogService],
+  providers: [AuthService, AuthGuard, BlogService, PagerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

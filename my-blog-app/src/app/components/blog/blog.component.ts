@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { NgForm } from '@angular/forms';
 import * as firebase from 'firebase';
 import { AuthService } from '../../services/auth.service';
+import { PagerService } from '../../services/pager.service';
 
 @Component({
   selector: 'app-blog',
@@ -27,7 +28,10 @@ export class BlogComponent implements OnInit, OnDestroy {
     UserId: ''
   };
 
-  constructor(private blogService: BlogService,private authService: AuthService) {
+  pager: any = {};
+  pagedItems: any[];
+
+  constructor(private blogService: BlogService,private pagerService: PagerService) {
     this.sub = new Subscription();
   }
 
@@ -42,9 +46,18 @@ export class BlogComponent implements OnInit, OnDestroy {
     this.sub.unsubscribe();
   }
 
+  setPage(page: number) {
+    // get pager object from service
+    this.pager = this.pagerService.getPager(this.posts.length, page);
+
+    // get current page of items
+    this.pagedItems = this.posts.slice(this.pager.startIndex, this.pager.endIndex + 1);
+}
+
   getPosts(){
     this.sub = this.blogService.getPosts().subscribe(x => {
       this.posts = x;
+      this.setPage(1);
     });
   }
 
