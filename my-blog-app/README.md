@@ -1,5 +1,7 @@
 # MyBlogApp
 
+Working demo can be found @ https://p-georgiev.github.io/PU_SPA_DEMO_4.13.2018/
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
 
 ## Development server
